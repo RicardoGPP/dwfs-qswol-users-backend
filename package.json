@@ -1,0 +1,26 @@
+{
+  "name": "dwfs-qswol-users-backend",
+  "version": "1.0.0",
+  "description": "Users RESTful API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RicardoGPP/dwfs-qswol-users-backend.git"
+  },
+  "author": "Ricardo Giovani Piantavinha Perandré",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RicardoGPP/dwfs-qswol-users-backend/issues"
+  },
+  "homepage": "https://github.com/RicardoGPP/dwfs-qswol-users-backend#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "knex": "^3.1.0",
+    "morgan": "^1.10.0",
+    "sqlite3": "^5.1.6"
+  }
+}
