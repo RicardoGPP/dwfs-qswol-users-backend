@@ -179,6 +179,48 @@ describe('Users API', () => {
             .send(user)
             .expect('Content-type', /application\/json/);
 
+        expect(response.ok).toBe(true);
+        expect(response.body).toStrictEqual(expect.objectContaining(user));
+
+        users = await userRepository.findAll();
+
+        expect(users.length).toStrictEqual(0);
+    });
+
+    test('Delete all, when requested, then must delete all users and return 200 (OK)', async () => {
+        let users = await userRepository.findAll();
+
+        expect(users.length).toStrictEqual(0);
+
+        const user1 = {
+            name: 'user1',
+            email: 'user1@email.com',
+            password: '123456'
+        };
+
+        await userRepository.create(user1);
+
+        const user2 = {
+            name: 'user2',
+            email: 'user2@email.com',
+            password: '654321'
+        };
+
+        await userRepository.create(user2);
+
+        users = await userRepository.findAll();
+
+        expect(users.length).toStrictEqual(2);
+
+        const response = await request
+            .delete('/users')
+            .expect('Content-type', /application\/json/);
+
+        expect(response.ok).toBe(true);
+        expect(response.body.length).toBe(2);
+        expect(response.body[0]).toStrictEqual(expect.objectContaining(user1));
+        expect(response.body[1]).toStrictEqual(expect.objectContaining(user2));
+
         users = await userRepository.findAll();
 
         expect(users.length).toStrictEqual(0);
