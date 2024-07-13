@@ -21,7 +21,7 @@ O projeto inclui dois conjuntos principais de testes:
 
 ## Banco de dados
 
-O banco de dados utilizado para armazenamento dos usuários é o SQLite. Ele foi criado à partir da execução da migração `20240711235748_create-user-table.js` no diretório `/db/migrations`.
+O banco de dados utilizado para armazenamento dos usuários é o **SQLite**. Ele foi criado à partir da execução da migração `20240711235748_create-user-table.js` no diretório `/db/migrations` e seu arquivo é o `db.sqlite3`. Para acesso, a ferramenta ORM **knex** foi utilizada de forma a abstrair as operações DDL e DML. Consulte o arquivo `knexfile.js` para maiores detalhes sobre as configurações do banco.
 
 ## Executando o projeto
 
