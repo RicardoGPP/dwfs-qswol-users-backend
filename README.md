@@ -53,4 +53,4 @@ Isso iniciará a execução dos testes utilizando Jest e SuperTest.
 
 ## Considerações
 
-Por conta do projeto ter o foco nos testes e não na API em si, não foi dado o devido tratamento à segurança da senha do usuário. Desta forma, o valor está sendo salvo sem qualquer criptografia.
+Por conta do projeto ter o foco nos testes e não na API em si, não foi dado o devido tratamento à segurança da senha do usuário. Desta forma, o valor é persistido e trafegado sem qualquer tipo de criptografia.
