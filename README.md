@@ -1,4 +1,4 @@
-# API de usuários - backend
+# Gerenciamento de usuários - backend
 
 Este projeto faz parte do trabalho da disciplina de Qualidade de Software para a Web do curso de pós-graduação em Desenvolvimento Web FullStack da PUC Minas. É um projeto Node.js focado em testes utilizando Jest e SuperTest.
 
