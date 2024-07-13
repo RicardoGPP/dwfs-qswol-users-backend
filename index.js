@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(morgan('common'));
 
 //Sets cors middleware.
-app.use(cors());
+app.use(cors({ exposedHeaders: 'X-Total-Count' }));
 
 //Sets users resource/router middlewares.
 app.use('/users', users);

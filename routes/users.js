@@ -13,7 +13,10 @@ const userTable = 'user';
 router.get('/', (_, res) => {
     knex(userTable)
         .select('*')
-        .then(users => res.status(200).json(users))
+        .then(users => {
+            res.setHeader('X-Total-Count', users.length);
+            res.status(200).json(users);
+        })
         .catch(error => res.status(500).send(`Error getting users: ${error.message}.`))
 });
 
@@ -23,7 +26,7 @@ router.post('/', (req, res) => {
         .insert(req.body)
         .then(ids => {
             return knex(userTable)
-                .where({_id: ids[0]})
+                .where({id: ids[0]})
                 .first();
         })
         .then(user => res.status(201).json(user))
@@ -36,7 +39,7 @@ router.get('/:id', (req, res) => {
 
     knex(userTable)
         .select('*')
-        .where({_id: id})
+        .where({id})
         .first()
         .then(user => {
             if (!user) {
@@ -53,12 +56,12 @@ router.put('/:id', (req, res) => {
     const id = req.params.id;
 
     knex(userTable)
-        .where({_id: id})
+        .where({id})
         .update(req.body)
         .then(() => {
             return knex(userTable)
                 .select('*')
-                .where({_id: id})
+                .where({id})
                 .first();
         })
         .then(user => {
@@ -77,14 +80,14 @@ router.delete('/:id', (req, res) => {
 
     knex(userTable)
         .select('*')
-        .where({_id: id})
+        .where({id})
         .first()
         .then(user => {
             if (!user) {
                 return Promise.resolve(null);
             }
             return knex(userTable)
-                    .where({_id: id})
+                    .where({id})
                     .delete()
                     .then(() => user);
         })
