@@ -2,7 +2,7 @@
 
 Este projeto faz parte do trabalho da disciplina de Qualidade de Software para a Web do curso de pós-graduação em Desenvolvimento Web FullStack da PUC Minas. É um projeto Node.js focado em testes utilizando Jest e SuperTest.
 
-## API
+## Endpoints
 
 A API disponibiliza os seguintes endpoints para gerenciar usuários:
 
@@ -12,14 +12,14 @@ A API disponibiliza os seguintes endpoints para gerenciar usuários:
 - **DELETE /users/:id**: Remove o usuário com o ID especificado.
 - **DELETE /users**: Remove todos os usuários.
 
-## Testes
+## Arquivos de teste
 
 O projeto inclui dois conjuntos principais de testes:
 
 - **user-repository.spec.js**: Testes unitários para o repositório de usuários.
 - **app.spec.js**: Testes de integração para a aplicação web.
 
-## Executando o Projeto
+## Executando o projeto
 
 Para executar a API, siga os passos abaixo:
 
@@ -37,7 +37,7 @@ node index.js
 
 A API estará disponível na porta 3000.
 
-## Executando Testes
+## Executando os testes
 
 Para executar os testes automatizados, utilize o seguinte comando:
 
