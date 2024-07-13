@@ -54,7 +54,7 @@ class UserRepository {
      * @returns A promise.
      */
     delete(id) {
-        return knex(table).where({id}).delete();
+        return knex(table).where({id}).del();
     }
 
     /**
@@ -63,7 +63,7 @@ class UserRepository {
      * @returns A promise.
      */
     deleteAll() {
-        return knex(table).delete();
+        return knex(table).truncate();
     }
 }
 
