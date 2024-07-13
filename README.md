@@ -19,6 +19,10 @@ O projeto inclui dois conjuntos principais de testes:
 - **user-repository.spec.js**: Testes unitários para o repositório de usuários.
 - **app.spec.js**: Testes de integração para a aplicação web.
 
+## Banco de dados
+
+O banco de dados utilizado para armazenamento dos usuários é o SQLite. Ele foi criado à partir da execução da migração `20240711235748_create-user-table.js` no diretório `/db/migrations`.
+
 ## Executando o projeto
 
 Para executar a API, siga os passos abaixo:
@@ -46,3 +50,7 @@ npm run test
 ```
 
 Isso iniciará a execução dos testes utilizando Jest e SuperTest.
+
+## Considerações
+
+Por conta do projeto ter o foco nos testes e não na API em si, não foi dado o devido tratamento à segurança da senha do usuário. Desta forma, o valor está sendo salvo sem qualquer criptografia.
