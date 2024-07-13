@@ -1,2 +1,1 @@
-const app = require('./app');
-app.listen(3000);
+require('./app').listen(3000);
